@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable no-unused-vars */
+import React from 'react'
+import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route, Navigate } from 'react-router-dom'
+import Root from './components/Root/index'
+import ContactsPage from './components/ContactsPage/index'
+import AppointmentsPage from './components/AppointmentsPage/index'
 
-function App() {
+const App = () => {
+
+  const router = createBrowserRouter(createRoutesFromElements(
+    <Route path="/" element={ <Root />}>
+      <Route index element={ <Navigate to="/contacts" replace/>} />
+      <Route path="/contacts" element={<ContactsPage />} />
+      <Route path="/appointments" element={<AppointmentsPage />} />
+    </Route>
+  ))
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    // <RouterProvider router={router} />
+    <div>
+      <h1 className="text-3xl font-bold underline">
+        Hello world!
+      </h1>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
