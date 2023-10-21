@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-vars */
-import React ,{useState} from "react";
+import React , {useEffect, useState} from "react";
 
-const ContactForm = () => {
+const ContactForm = (props) => {
+    console.log(props)
 
     const [inputName, setInputName] = useState("");
     const [inputPhone, setInputPhone] = useState("");
@@ -12,12 +13,27 @@ const ContactForm = () => {
     }
 
     const handlePhoneChange = (e) => {
-        setInputName(e.target.value)
+        setInputPhone(e.target.value)
     }
 
     const handleEmailChange = (e) => {
-        setInputName(e.target.value)
+        setInputEmail(e.target.value)
     }
+    
+    const handleSubmit = () => {
+        console.log(props.contactsList)
+    }
+
+    // useEffect((props) => {
+    //     const contact = {
+    //         name: inputName,
+    //         phone: inputPhone,
+    //         email: inputEmail
+    //     }
+    
+    //     props.updateContacts(contact)
+    // }, [inputName, inputEmail, inputPhone])
+
 
     return (
         <div>
@@ -31,10 +47,9 @@ const ContactForm = () => {
             <label  class='text-white'>Email</label><br/>
             <input class='w-full h-8 outline-blue-500 outline-4' type="text" value={inputEmail} onChange={handleEmailChange} required/>
         
-            <button class='my-5 px-4 h-12 rounded-full text-white bg-purple-900 hover:bg-purple-950'>Add contact</button>
+            <button class='my-5 px-4 h-12 rounded-full text-white bg-purple-900 hover:bg-purple-950' onSubmit={handleSubmit}>Add contact</button>
            </form>
         </div>
-        
     )
 }
 
