@@ -27,19 +27,18 @@ const AppointmentForm = () => {
     return (
         <div>
             <form>
-            <label>Title</label><br/>
+            <label  class='text-white'>Title</label><br/>
             <input class='w-full h-8 outline-blue-500 outline-4' type="text" value={inputTitle} onChange={handleTitleChange} required/>
             <br />
-            <label>Contact</label><br/>
+            <label  class='text-white'>Contact</label><br/>
             <input class='w-full h-8 outline-blue-500 outline-4' type="text" value={inputContact} onChange={handleContactChange} required />
             <br/>
-            <label>Date</label><br/>
+            <label  class='text-white'>Date</label><br/>
             <input class='w-full h-8 outline-blue-500 outline-4' type="text" value={inputDate} onChange={handleDateChange} required/>
             <br/>
-            <label>Time</label><br/>
+            <label  class='text-white'>Time</label><br/>
             <input class='w-full h-8 outline-blue-500 outline-4' type="text" value={inputTime} onChange={handleTimeChange} required/>
-
-            <button class='my-5 px-4 h-12 rounded-full bg-purple-500'>Add Appointment</button>
+            <button class='my-5 px-4 h-12 rounded-full text-white bg-purple-900 hover:bg-purple-950'>Add Appointment</button>
            </form>
         </div>
         
