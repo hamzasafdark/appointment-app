@@ -7,7 +7,7 @@ const Root = () => {
         <>
             <nav>
                 <NavLink to="/contacts">
-                    Contacts
+                        Contacts
                 </NavLink>
                 <NavLink to="/appointments">
                     Appointments

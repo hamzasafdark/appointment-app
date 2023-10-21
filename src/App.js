@@ -18,9 +18,7 @@ const App = () => {
   return (
     // <RouterProvider router={router} />
     <div>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+      <RouterProvider router={router} />
     </div>
   )
 }
