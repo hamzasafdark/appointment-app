@@ -24,8 +24,8 @@ const App = () => {
       phoneNumber:contactData.phone,
       email:contactData.email
     }
-    const response = await axios.post('http://localhost:7000/contact/createcontact',payload).t;
-
+    const response = await axios.post('http://localhost:7000/contact/createcontact',payload);
+    console.log(response);
   }
 
 
