@@ -7,7 +7,8 @@ const ContactsPage = (props) => {
     return (        
         <div class='px-5 text-white bg-purple-500'>
            <p class='py-6 font-bold text-xl'>Add Contact</p>
-           <ContactForm contactsList={props.contactsList} updateContacts={props.updateContacts} />
+           {/* // down here renaming my props or simply props drilling  */}
+           <ContactForm postContact={(contactData)=>props.onAddContact(contactData)} /> 
            <div class='h-screen'>
             <p class='py-6 font-bold text-xl flex items-center justify-center'>Contacts</p>
             <TileList />

@@ -4,7 +4,7 @@ import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route, N
 import Root from './components/Root/index'
 import ContactsPage from './components/ContactsPage/index'
 import AppointmentsPage from './components/AppointmentsPage/index'
-
+import axios from 'axios';
 const App = () => {
   const [contactsList, setContactList] = useState([]);
   const [appointmentsList, setAppointmentList] = useState([]);
@@ -17,10 +17,22 @@ const App = () => {
     setAppointmentList(appointmentsList.push({title, contact, date, time}))
   }
 
+  const handleAddContact=async(contactData)=>{
+    console.log(contactData) //accessing data of the props
+    const payload = {
+      name:contactData.name,
+      phoneNumber:contactData.phone,
+      email:contactData.email
+    }
+    const response = await axios.post('http://localhost:7000/contact/createcontact',payload).t;
+
+  }
+
+
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={ <Root />}>
       <Route index element={ <Navigate to="/contacts" replace/>} />
-      <Route path="/contacts" element={<ContactsPage contactsList={contactsList} updateContacts={updateContacts} />} />
+      <Route path="/contacts" element={<ContactsPage contactsList={contactsList} updateContacts={updateContacts} onAddContact={handleAddContact}  />} />
       <Route path="/appointments" element={<AppointmentsPage appointmentsList={appointmentsList} updateAppointments={updateAppointments}/>} />
     </Route>
   ))
