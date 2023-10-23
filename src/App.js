@@ -37,6 +37,19 @@ const App = () => {
     console.log(response);
   };
 
+  const handleAddAppointment = async (appointmentData) => {
+    const Payload = {
+      title: appointmentData.title,
+      contactName: appointmentData.contact,
+      Date: appointmentData.date,
+      Time: appointmentData.time,
+    };
+    const response = await axios.post(
+      "http://localhost:7000/appointments/createAppointment",
+      Payload
+    );
+  };
+
   useEffect(() => {
     axios
       .get("http://localhost:7000/contact/getallcontacts")
