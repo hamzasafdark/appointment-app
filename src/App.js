@@ -28,12 +28,23 @@ const App = () => {
     console.log(response);
   }
 
+  const handleAddAppointment =async(appointmentData)=>{
+    const Payload ={
+      title:appointmentData.title,
+      contactName:appointmentData.contact,
+      Date:appointmentData.date,
+      Time:appointmentData.time
+    }
+    const response= await axios.post('http://localhost:7000/appointments/createAppointment',Payload)
+
+  }
+
 
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={ <Root />}>
       <Route index element={ <Navigate to="/contacts" replace/>} />
       <Route path="/contacts" element={<ContactsPage contactsList={contactsList} updateContacts={updateContacts} onAddContact={handleAddContact}  />} />
-      <Route path="/appointments" element={<AppointmentsPage appointmentsList={appointmentsList} updateAppointments={updateAppointments}/>} />
+      <Route path="/appointments" element={<AppointmentsPage appointmentsList={appointmentsList} updateAppointments={updateAppointments} onAddAppointment={handleAddAppointment}/>} />
     </Route>
   ))
 
