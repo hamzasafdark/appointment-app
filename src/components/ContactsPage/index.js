@@ -4,6 +4,9 @@ import ContactForm from "../ContactForm";
 import TileList from "../TileList";
 
 const ContactsPage = (props) => {
+  const { contactLists, isContact, setIsContact } = props
+  setIsContact(true)
+
   return (
     <div class="px-5 text-white bg-purple-500">
       <p class="py-6 font-bold text-xl">Add Contact</p>
@@ -15,7 +18,7 @@ const ContactsPage = (props) => {
         <p class="py-6 font-bold text-xl flex items-center justify-center">
           Contacts
         </p>
-        <TileList contactLists={props.contactLists} />
+        <TileList contactLists={contactLists} isContact={isContact} />
       </div>
     </div>
   );
