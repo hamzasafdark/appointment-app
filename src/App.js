@@ -38,6 +38,7 @@ const App = () => {
   };
 
   const handleAddAppointment = async (appointmentData) => {
+    console.log(appointmentData)
     const Payload = {
       title: appointmentData.title,
       contactName: appointmentData.contact,
@@ -78,6 +79,8 @@ const App = () => {
             <AppointmentsPage
               appointmentsList={appointmentsList}
               updateAppointments={updateAppointments}
+              onAddAppointment={handleAddAppointment}
+              contactLists={contactsList}
             />
           }
         />

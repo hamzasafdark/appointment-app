@@ -15,9 +15,7 @@ const TileList = (props) => {
                 <span class="absolute inset-0" aria-hidden="true" />
                 <p class="text-sm font-medium text-gray-900">{person.name}</p>
                 <p class="truncate text-sm text-gray-500">{person.email}</p>
-                <p class="truncate text-sm text-gray-500">
-                  {person.phoneNumber}
-                </p>
+                <p class="truncate text-sm text-gray-500">{person.phoneNumber}</p>
               </div>
             </div>
           </div>
