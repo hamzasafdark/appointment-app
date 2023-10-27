@@ -59,7 +59,7 @@ const App = () => {
       .then((response) => {
         setContactList(response.data);
       });
-  }, []);
+  }, [contactsList]);
 
   const fetchAppointmentsData = async () => {
     await axios.get('http://localhost:7000/appointments/getallappointments').then((response) => {
@@ -69,7 +69,7 @@ const App = () => {
 
   useEffect(() => {
     fetchAppointmentsData()
-  }, []);
+  }, [appointmentsList]);
 
   const router = createBrowserRouter(
     createRoutesFromElements(

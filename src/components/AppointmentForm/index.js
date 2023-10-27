@@ -26,7 +26,6 @@ const AppointmentForm = (props) => {
     const handleAppointmentChange = (event) => {
         const { name, value } = event.target
         setAppointmentData({ ...appointmentData, [name]: value })
-
     }
 
     const handleSelectChange = (e) => {

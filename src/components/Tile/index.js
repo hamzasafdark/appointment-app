@@ -2,6 +2,8 @@
 import React from "react";
 
 const Tile = (props) => {
+  
+
     return (
         <div
           key={props.person.email}
